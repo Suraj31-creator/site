@@ -1,210 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Suraj Jha's Website</title>
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suraj Jha's Portfolio</title>
+  <style>
+      /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    color: #fff;
-    overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
 }
 
-header {
-    background: #333;
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+nav {
+  background-color: #333;
+  padding: 1em;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
 }
 
-nav ul li {
-    list-style: none;
-    margin: 0 20px;
+nav li {
+  margin: 0 1em;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-nav ul li a:hover {
-    color: #feb47b;
+section {
+  padding: 3em 1em;
+  text-align: center;
 }
 
-.section {
-    padding: 80px 20px;
-    text-align: center;
+section#home {
+  background-color: #009688;
+  color: #fff;
+}
+
+section#about {
+  background-color: #ffffff;
+}
+
+section#contact {
+  background-color: #e3f2fd;
+}
+
+section#calculator {
+  background-color: #fff3e0;
 }
 
 h1, h2 {
-    margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: 1em;
 }
 
-.calculator {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+/* About Section Styling */
+ul {
+  list-style-type: none;
+  margin-top: 1em;
+}
+
+ul li {
+  margin: 0.5em 0;
+  font-size: 1.2em;
+}
+
+/* Calculator Styling */
+.calculator-container {
+  display: inline-block;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 #display {
-    width: 200px;
-    padding: 10px;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: right;
-    background: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  text-align: right;
+  font-size: 2em;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fff;
 }
 
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 80px);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
-button {
-    padding: 20px;
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+button.btn {
+  padding: 20px;
+  font-size: 1.5em;
+  background-color: #ff5722;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #feb47b;
+button.btn:hover {
+  background-color: #ff9800;
 }
 
-a {
-    color: #feb47b;
-    text-decoration: none;
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  font-size: 0.9em;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
-a:hover {
-    text-decoration: underline;
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .calculator-container {
+    width: 100%;
+  }
 }
 
-/* Simple Animation */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+@media (max-width: 480px) {
+  section {
+    padding: 2em 0.5em;
+  }
 }
 
-.section {
-    animation: fadeIn 1.5s ease-in;
-}
-
-    </style>
+  </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#calculator">Calculator</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#calculator">Calculator</a></li>
+    </ul>
+  </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="section">
-        <h1>Welcome to Suraj Jha's Website</h1>
-        <p>Student | Coding Enthusiast | Designer | Researcher</p>
-    </section>
+  <!-- Home Section -->
+  <section id="home">
+    <div class="intro">
+      <h1 class="animate-text">Hi, I'm Suraj Jha</h1>
+      <p>Student | Developer | Researcher</p>
+      <img src="your-photo.jpg" alt="Suraj Jha">
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>Hello! I'm Suraj Jha, a student passionate about coding, designing, research, and analysis. I love speaking about technology and playing cricket in my free time.</p>
-    </section>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a student with a passion for coding, designing, research, analysis, and cricket. I enjoy learning new technologies and solving problems. Here's a little bit more about my hobbies:</p>
+    <ul>
+      <li>Coding</li>
+      <li>Designing</li>
+      <li>Research & Analysis</li>
+      <li>Cricket</li>
+    </ul>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:Zhasuraj0@gmail.com">Zhasuraj0@gmail.com</a></p>
-        <p>Facebook: <a href="https://facebook.com" target="_blank">Facebook Profile</a></p>
-        <p>X (Twitter): <a href="https://twitter.com/SurajZha260345" target="_blank">Suraj Zha</a></p>
-    </section>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:Zhasuraj0@gmail.com">Zhasuraj0@gmail.com</a></p>
+    <p>Facebook: <a href="https://facebook.com/20+" target="_blank">Facebook Profile</a></p>
+    <p>Twitter: <a href="https://twitter.com/SurajZha260345" target="_blank">Suraj Zha (@SurajZha260345)</a></p>
+  </section>
 
-    <!-- Calculator Section -->
-    <section id="calculator" class="section">
-        <h2>Calculator</h2>
-        <div class="calculator">
-            <input type="text" id="display" disabled>
-            <div class="buttons">
-                <button class="btn" onclick="appendNumber('7')">7</button>
-                <button class="btn" onclick="appendNumber('8')">8</button>
-                <button class="btn" onclick="appendNumber('9')">9</button>
-                <button class="btn" onclick="appendOperator('/')">/</button>
-                <button class="btn" onclick="appendNumber('4')">4</button>
-                <button class="btn" onclick="appendNumber('5')">5</button>
-                <button class="btn" onclick="appendNumber('6')">6</button>
-                <button class="btn" onclick="appendOperator('*')">*</button>
-                <button class="btn" onclick="appendNumber('1')">1</button>
-                <button class="btn" onclick="appendNumber('2')">2</button>
-                <button class="btn" onclick="appendNumber('3')">3</button>
-                <button class="btn" onclick="appendOperator('-')">-</button>
-                <button class="btn" onclick="appendNumber('0')">0</button>
-                <button class="btn" onclick="clearDisplay()">C</button>
-                <button class="btn" onclick="calculateResult()">=</button>
-                <button class="btn" onclick="appendOperator('+')">+</button>
-            </div>
-        </div>
-    </section>
-<script>
-    let currentInput = "";
+  <!-- Calculator Section -->
+  <section id="calculator">
+    <h2>Calculator</h2>
+    <div class="calculator-container">
+      <input id="display" type="text" disabled>
+      <div class="buttons">
+        <button class="btn" onclick="appendNumber('7')">7</button>
+        <button class="btn" onclick="appendNumber('8')">8</button>
+        <button class="btn" onclick="appendNumber('9')">9</button>
+        <button class="btn" onclick="appendNumber('+')">+</button>
+        <button class="btn" onclick="appendNumber('4')">4</button>
+        <button class="btn" onclick="appendNumber('5')">5</button>
+        <button class="btn" onclick="appendNumber('6')">6</button>
+        <button class="btn" onclick="appendNumber('-')">-</button>
+        <button class="btn" onclick="appendNumber('1')">1</button>
+        <button class="btn" onclick="appendNumber('2')">2</button>
+        <button class="btn" onclick="appendNumber('3')">3</button>
+        <button class="btn" onclick="appendNumber('*')">*</button>
+        <button class="btn" onclick="appendNumber('0')">0</button>
+        <button class="btn" onclick="clearDisplay()">C</button>
+        <button class="btn" onclick="calculateResult()">=</button>
+        <button class="btn" onclick="appendNumber('/')">/</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Suraj Jha. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js">
+      // Animation for text
+document.addEventListener("DOMContentLoaded", function() {
+  const text = document.querySelector('.animate-text');
+  text.classList.add('fade-in');
+});
+
+// Calculator Functions
+let currentInput = '';
 
 function appendNumber(number) {
-    currentInput += number;
-    document.getElementById("display").value = currentInput;
-}
-
-function appendOperator(operator) {
-    currentInput += " " + operator + " ";
-    document.getElementById("display").value = currentInput;
+  currentInput += number;
+  document.getElementById('display').value = currentInput;
 }
 
 function clearDisplay() {
-    currentInput = "";
-    document.getElementById("display").value = currentInput;
+  currentInput = '';
+  document.getElementById('display').value = currentInput;
 }
 
 function calculateResult() {
-    try {
-        currentInput = eval(currentInput).toString();
-        document.getElementById("display").value = currentInput;
-    } catch (error) {
-        document.getElementById("display").value = "Error";
-    }
+  try {
+    currentInput = eval(currentInput);
+    document.getElementById('display').value = currentInput;
+  } catch (error) {
+    document.getElementById('display').value = 'Error';
+    currentInput = '';
+  }
 }
 
-</script>
+// Simple animation for the text
+document.styleSheets[0].insertRule(`
+  .fade-in {
+    animation: fadeIn 2s ease-in-out;
+  }
+`, 0);
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+  </script>
 </body>
 </html>
