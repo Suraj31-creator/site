@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Suraj Jha's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h1>Welcome to Suraj Jha's Website</h1>
+        <p>Student | Coding Enthusiast | Designer | Researcher</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hello! I'm Suraj Jha, a student passionate about coding, designing, research, and analysis. I love speaking about technology and playing cricket in my free time.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:Zhasuraj0@gmail.com">Zhasuraj0@gmail.com</a></p>
+        <p>Facebook: <a href="https://facebook.com" target="_blank">Facebook Profile</a></p>
+        <p>X (Twitter): <a href="https://twitter.com/SurajZha260345" target="_blank">Suraj Zha</a></p>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="section">
+        <h2>Calculator</h2>
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+            <div class="buttons">
+                <button class="btn" onclick="appendNumber('7')">7</button>
+                <button class="btn" onclick="appendNumber('8')">8</button>
+                <button class="btn" onclick="appendNumber('9')">9</button>
+                <button class="btn" onclick="appendOperator('/')">/</button>
+                <button class="btn" onclick="appendNumber('4')">4</button>
+                <button class="btn" onclick="appendNumber('5')">5</button>
+                <button class="btn" onclick="appendNumber('6')">6</button>
+                <button class="btn" onclick="appendOperator('*')">*</button>
+                <button class="btn" onclick="appendNumber('1')">1</button>
+                <button class="btn" onclick="appendNumber('2')">2</button>
+                <button class="btn" onclick="appendNumber('3')">3</button>
+                <button class="btn" onclick="appendOperator('-')">-</button>
+                <button class="btn" onclick="appendNumber('0')">0</button>
+                <button class="btn" onclick="clearDisplay()">C</button>
+                <button class="btn" onclick="calculateResult()">=</button>
+                <button class="btn" onclick="appendOperator('+')">+</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
